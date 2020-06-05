@@ -17,5 +17,124 @@
     </form>
     <h1>Информационная система военного округа</h1>
     <h2>Запросы</h2>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Получить перечень всех частей военного округа, указанной армии, дивизии, корпуса и их командиров</p>
+  <p>1. По армии:</p>
+  <form method="get" action="/vchasty-by-armia">
+    <div><label>Укажите армию:
+      <select name="armia" required>
+        <option value="" disabled selected hidden>Укажите армию</option>
+        {{#armii}}
+          <option value="{{id}}">{{id}}</option>
+        {{/armii}}
+      </select>
+    </label></div>
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>2. По дивизии:</p>
+  <form method="get" action="/vchasty-by-divizia">
+    <div><label>Укажите дивизию:
+      <select name="divizia" required>
+        <option value="" disabled selected hidden>Укажите дивизию</option>
+        {{#divizii}}
+          <option value="{{id}}">{{id}}</option>
+        {{/divizii}}
+      </select>
+    </label></div>
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>3. По корпусу:</p>
+  <form method="get" action="/vchasty-by-korpus">
+    <div><label>Укажите корпус:
+      <select name="korpus" required>
+        <option value="" disabled selected hidden>Укажите корпус</option>
+        {{#korpusi}}
+          <option value="{{id}}">{{id}}</option>
+        {{/korpusi}}
+      </select>
+    </label></div>
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>4. В целом:</p>
+  <form method="get" action="/vchasty-all">
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>Список военных частей:</p>
+  {{#vchasti}}
+    <div>
+      <b>{{id}}: командир - офицер {{kapitan.person.id}} {{kapitan.person.firstName}} {{kapitan.person.lastName}} {{kapitan.person.thirdName}} </b>
+    </div>
+  {{/vchasti}}
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Получить данные по офицерскому составу в целом и по офицерскому составу указанного звания</p>
+  <p>1. В целом:</p>
+  <form method="get" action="/ofsostav-all">
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>2. По званию:</p>
+  <form method="get" action="/ofsostav-spec">
+    <div><label>Укажите звание:
+      <select name="specialnost_name" required>
+        <option value="" disabled selected hidden>Выберите специальность</option>
+        <option value="GENERAL">Генерал</option>
+        <option value="POLKOVNIK">Полковник</option>
+        <option value="PODPOLKOVNIK">Подполковник</option>
+        <option value="MAIOR">Майор</option>
+        <option value="KAPITAN">Капитан</option>
+        <option value="LEYTENANT">Лейтенант</option>
+      </select>
+    </label></div>
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>Список офицеров:</p>
+  {{#oficers}}
+    <div>
+      <b>{{id}}: {{person.firstName}} {{person.lastName}} {{person.thirdName}} </b>
+    </div>
+  {{/oficers}}
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Получить данные по рядовому и сержантскому составу в целом и с учетом указанного звания</p>
+  <p>1. В целом:</p>
+  <form method="get" action="/rsostav-all">
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>2. По званию:</p>
+  <form method="get" action="/rsostav-spec">
+    <div><label>Укажите звание:
+      <select name="specialnost_name" required>
+        <option value="" disabled selected hidden>Выберите специальность</option>
+        <option value="STARSHINA">Старшина</option>
+        <option value="SERZHANT">Сержант</option>
+        <option value="PRAPORSHIK">Прапорщик</option>
+        <option value="EFREYTOR">Ефрейтор</option>
+        <option value="RYADOVOY">Рядовой</option>
+      </select>
+    </label></div>
+    <input type="submit" value="Инфо"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+  </form><br>
+
+  <p>Список рядовых:</p>
+  {{#ryadovie}}
+    <div>
+      <b>{{id}}: {{person.firstName}} {{person.lastName}} {{person.thirdName}} </b>
+    </div>
+  {{/ryadovie}}
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
   </body>
 </html>

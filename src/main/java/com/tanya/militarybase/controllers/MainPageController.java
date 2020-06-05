@@ -18,9 +18,6 @@ public class MainPageController {
     @GetMapping("/forms")
     public String getForms(Map<String, Object> model) { return "forms"; }
 
-    @GetMapping("/requests")
-    public String getRequests(Map<String, Object> model) { return "requests"; }
-
     @GetMapping("/back-forms")
     public String backForms(Map<String, Object> model) { return "forms"; }
 
