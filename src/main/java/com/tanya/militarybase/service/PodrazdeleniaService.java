@@ -119,32 +119,34 @@ public class PodrazdeleniaService {
     public Armia getArmia(Integer id) {
         return armiaRepository.findById(id).get();
     }
-
     public Brigada getBrigada(Integer id) {
         return brigadaRepository.findById(id).get();
     }
-
     public Divizia getDivizia(Integer id) {
         return diviziaRepository.findById(id).get();
     }
-
     public Korpus getKorpus(Integer id) {
         return korpusRepository.findById(id).get();
     }
-
     public Otdelenie getOtdelenie(Integer id) {
         return otdelenieRepository.findById(id).get();
     }
-
     public Rota getRota(Integer id) {
         return rotaRepository.findById(id).get();
     }
-
     public VoinskayaChast getVoinskayaChast(Integer id) {
         return voinskayaChastRepository.findById(id).get();
     }
-
     public Vzvod getVzvod(Integer id) {
         return vzvodRepository.findById(id).get();
     }
+
+    public List<Armia> getArmii() { return armiaRepository.findAll(); };
+    public List<Brigada> getBrigadi() { return brigadaRepository.findAll(); };
+    public List<Divizia> getDivizii() { return diviziaRepository.findAll(); };
+    public List<Korpus> getKorpusi() { return korpusRepository.findAll(); };
+    public List<Otdelenie> getOtdelenia() { return otdelenieRepository.findAll(); };
+    public List<Rota> getRoti() { return rotaRepository.findAll(); };
+    public List<VoinskayaChast> getVoinskayaChasti() { return voinskayaChastRepository.findAll(); };
+    public List<Vzvod> getVzvodi() { return vzvodRepository.findAll(); };
 }

@@ -11,6 +11,9 @@
 <form action="/logout" method="post">
   <input type="submit" value="Выйти"/>
   <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form><br><br>
+<form method="get" action="/back-forms">
+  <button type="submit">Назад</button>
 </form>
 <h1>Информационная система военного округа</h1>
 <h2>Военнослужащие</h2>
@@ -54,124 +57,124 @@
 
   <label>Характеристики Генерала:</label><br>
   <div>
-    <select name="character1">
+    <select name="general_character1">
       <option value="" >Присутствие на службе</option>
       <option value=0>Отсутствует</option>
       <option value=1>Присутствует</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Город службы"><br>
-  <input type="number" name="character3" placeholder="Год рождения"><br><br>
+  <input type="text" name="general_character2" placeholder="Город службы"><br>
+  <input type="number" name="general_character3" placeholder="Год рождения"><br><br>
 
   <label>Характеристики Полковника:</label><br>
   <div>
-    <select name="character1">
+    <select name="polkovnik_character1">
       <option value="" >Участие в военных действиях</option>
       <option value=0>Не участвовал</option>
       <option value=1>Участвовал</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Родной город"><br>
-  <input type="number" name="character3" placeholder="Количество военных действий"><br><br>
+  <input type="text" name="polkovnik_character2" placeholder="Родной город"><br>
+  <input type="number" name="polkovnik_character3" placeholder="Количество военных действий"><br><br>
 
   <label>Характеристики Подолковника:</label><br>
   <div>
-    <select name="character1">
+    <select name="podpolkovnik_character1">
       <option value="" >Наличие дисциплинарных проступков</option>
       <option value=0>Нет</option>
       <option value=1>Да</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Количество  наград"><br><br>
+  <input type="text" name="podpolkovnik_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="podpolkovnik_character3" placeholder="Количество  наград"><br><br>
 
   <label>Характеристики Майора:</label><br>
   <div>
-    <select name="character1">
+    <select name="mayor_character1">
       <option value="" >Присутствие на службе</option>
       <option value=0>Отсутствует</option>
       <option value=1>Присутствует</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Количество военных действий"><br><br>
+  <input type="text" name="mayor_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="mayor_character3" placeholder="Количество военных действий"><br><br>
 
   <label>Характеристики Капитана:</label><br>
   <div>
-    <select name="character1">
+    <select name="kapitan_character1">
       <option value="" >Наличие дисциплинарных проступков</option>
       <option value=0>Нет</option>
       <option value=1>Да</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Родной город"><br>
-  <input type="number" name="character3" placeholder="Количество военных действий"><br><br>
+  <input type="text" name="kapitan_character2" placeholder="Родной город"><br>
+  <input type="number" name="kapitan_character3" placeholder="Количество военных действий"><br><br>
 
   <label>Характеристики Лейтената:</label><br>
   <div>
-    <select name="character1">
+    <select name="leytenant_character1">
       <option value="" >Участие в военных действиях</option>
       <option value=0>Не участвовал</option>
       <option value=1>Участвовал</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Город службы"><br>
-  <input type="number" name="character3" placeholder="Количество  наград"><br><br>
+  <input type="text" name="leytenant_character2" placeholder="Город службы"><br>
+  <input type="number" name="leytenant_character3" placeholder="Количество  наград"><br><br>
 
   <label>Характеристики Старшины:</label><br>
   <div>
-    <select name="character1">
+    <select name="starshina_character1">
       <option value="" >Участие в военных действиях</option>
       <option value=0>Не участвовал</option>
       <option value=1>Участвовал</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Год рождения"><br><br>
+  <input type="text" name="starshina_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="starshina_character3" placeholder="Год рождения"><br><br>
 
   <label>Характеристики Сержанта:</label><br>
   <div>
-    <select name="character1">
+    <select name="retzhant_character1">
       <option value="" >Наличие дисциплинарных проступков</option>
       <option value=false>Нет</option>
       <option value=true>Да</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Год рождения"><br><br>
+  <input type="text" name="retzhant_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="retzhant_character3" placeholder="Год рождения"><br><br>
 
   <label>Характеристики Прапорщика:</label><br>
   <div>
-    <select name="character1">
+    <select name="praporshik_character1">
       <option value="">Присутствие на службе</option>
       <option value=0>Отсутствует</option>
       <option value=1>Присутствует</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Родной город"><br>
-  <input type="number" name="character3" placeholder="Год рождения"><br><br>
+  <input type="text" name="praporshik_character2" placeholder="Родной город"><br>
+  <input type="number" name="praporshik_character3" placeholder="Год рождения"><br><br>
 
   <label>Характеристики Ефрейтора:</label><br>
   <div>
-    <select name="character1">
+    <select name="efreytor_character1">
       <option value="">Участие в военных действиях</option>
       <option value=0>Не участвовал</option>
       <option value=1>Участвовал</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Количество  наград"><br><br>
+  <input type="text" name="efreytor_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="efreytor_character3" placeholder="Количество  наград"><br><br>
 
   <label>Характеристики Рядового:</label><br>
   <div>
-    <select name="character1">
+    <select name="ryadovoy_character1">
       <option value="">Наличие дисциплинарных проступков</option>
       <option value=0>Нет</option>
       <option value=1>Да</option>
     </select>
   </div>
-  <input type="text" name="character2" placeholder="Название оконченной академии/училища"><br>
-  <input type="number" name="character3" placeholder="Количество военных действий"><br><br>
+  <input type="text" name="ryadovoy_character2" placeholder="Название оконченной академии/училища"><br>
+  <input type="number" name="ryadovoy_character3" placeholder="Количество военных действий"><br><br>
 
   <button type="submit">Добавить</button>
 

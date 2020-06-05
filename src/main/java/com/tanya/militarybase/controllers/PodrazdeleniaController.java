@@ -1,5 +1,6 @@
 package com.tanya.militarybase.controllers;
 
+import com.tanya.militarybase.dao.persons.PersonRepository;
 import com.tanya.militarybase.model.OficerSostav;
 import com.tanya.militarybase.model.persons.Person;
 import com.tanya.militarybase.service.FormsService;
@@ -21,10 +22,20 @@ public class PodrazdeleniaController {
 
     private final PodrazdeleniaService podrazdeleniaService;
     private final FormsService formsService;
+    private final PersonRepository personRepository;
 
     @GetMapping("/podrazdelenia")
     public String getVoennosluzhashie(Map<String, Object> model) {
         model.put("oficerPersons", podrazdeleniaService.getAllOficerSostav());
+        model.put("armii", podrazdeleniaService.getArmii());
+        model.put("brigadi", podrazdeleniaService.getBrigadi());
+        model.put("korpusi", podrazdeleniaService.getKorpusi());
+        model.put("divizii", podrazdeleniaService.getDivizii());
+        model.put("vchasti", podrazdeleniaService.getVoinskayaChasti());
+        model.put("roti", podrazdeleniaService.getRoti());
+        model.put("vzvodi", podrazdeleniaService.getVzvodi());
+        model.put("otdelenia", podrazdeleniaService.getOtdelenia());
+        model.put("allPersons", personRepository.findAll());
         return "podrazdelenia";
     }
 
