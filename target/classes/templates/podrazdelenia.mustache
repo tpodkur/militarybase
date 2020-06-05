@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style type="text/css">
+  </style>
+  <title>Формы</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="/logout" method="post">
+  <input type="submit" value="Выйти"/>
+  <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form><br><br>
+<h1>Информационная система военного округа</h1>
+<h2>Подразделения</h2>
+<p>Формы ввода новых подразделений:</p>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить отделение:</p>
+<form method="post" action="/otdelenie">
+  <label>Задайте командира:</label><br>
+  <input type=number name="komandir_otdelenia" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительский взвод:</label><br>
+  <input type=number name="id_vzvod" placeholder="Введите id взвода" ><br>
+  <button type="submit">Создать новое Отделение с указанным командиром</button>
+</form>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить взвод:</p>
+<form method="post" action="/new-vzvod">
+  <label>Задайте командира:</label><br>
+  <input type=number name="komandir_otdelenia" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительскую роту:</label><br>
+  <input type=number name="id_rota" placeholder="Введите id роты" ><br>
+  <button type="submit">Создать новый Взвод с указанным командиром</button>
+</form>
+
+<!--<p>Редактировать взвод:</p>-->
+<!--<form method="post" action="/edit-vzvod">-->
+<!--  <label>Введите id взода, который хотите отредактировать:</label><br>-->
+<!--  <input type=number name="id_vzvod" placeholder="Введите id взвода" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите отеделние, входящее в данный взвод (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_otdelenie" placeholder="Введите id отделения"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить роту:</p>
+<form method="post" action="/new-rota">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительскую воинскую часть:</label><br>
+  <input type=number name="id_vchast" placeholder="Введите id воинской части" ><br>
+  <button type="submit">Создать новую Роту</button>
+</form>
+
+<!--<p>Редактировать роту:</p>-->
+<!--<form method="post" action="/edit-rota">-->
+<!--  <label>Введите id роты, которую хотите отредактировать:</label><br>-->
+<!--  <input type=number name="id_rota" placeholder="Введите id роты" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите взвод, входящий в данную роту (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_vzvod" placeholder="Введите id взвода"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить воинскую часть:</p>
+<form method="post" action="/new-vchast">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительскую дивизию:</label><br>
+  <input type=number name="id_divizia" placeholder="Введите id дивизии" ><br>
+  <button type="submit">Создать новую Воинскую часть</button>
+</form>
+
+<!--<p>Редактировать воинскую часть:</p>-->
+<!--<form method="post" action="/edit-vchast">-->
+<!--  <label>Введите id воинской части, которую хотите отредактировать:</label><br>-->
+<!--  <input type=number name="vchast" placeholder="Введите id воинской части" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите роту, входящую в данную воинскую часть (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_rota" placeholder="Введите id роты"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить дивизию:</p>
+<form method="post" action="/new-divizia">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительский корпус:</label><br>
+  <input type=number name="id_korpus" placeholder="Введите id корпуса" ><br>
+  <button type="submit">Создать новую Дивизию</button>
+</form>
+
+<!--<p>Редактировать дивизию:</p>-->
+<!--<form method="post" action="/edit-divizia">-->
+<!--  <label>Введите id дивизии, которую хотите отредактировать:</label><br>-->
+<!--  <input type=number name="divizia" placeholder="Введите id дивизии" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите воинскую часть, входящую в данную дивизию (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_vchast" placeholder="Введите id воинской части"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить корпус:</p>
+<form method="post" action="/new-korpus">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительскую бригаду:</label><br>
+  <input type=number name="id_brigada" placeholder="Введите id бригады" ><br>
+  <button type="submit">Создать новый Корпус</button>
+</form>
+
+<!--<p>Редактировать корпус:</p>-->
+<!--<form method="post" action="/edit-korpus">-->
+<!--  <label>Введите id корпуса, который хотите отредактировать:</label><br>-->
+<!--  <input type=number name="korpus" placeholder="Введите id корпуса" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите дивизию, входящую в данный корпус (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_divizia" placeholder="Введите id дивизии"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить бригаду:</p>
+<form method="post" action="/new-brigada">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <label>Задайте родительскую армию:</label><br>
+  <input type=number name="id_armia" placeholder="Введите id армии" ><br>
+  <button type="submit">Создать новую Бригаду</button>
+</form>
+
+<!--<p>Редактировать бригаду:</p>-->
+<!--<form method="post" action="/edit-brigada">-->
+<!--  <label>Введите id бригады, которую хотите отредактировать:</label><br>-->
+<!--  <input type=number name="brigada" placeholder="Введите id бригады" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите корпус, входящий в данную бригаду (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_korpus" placeholder="Введите id корпуса"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Добавить армию:</p>
+<form method="post" action="/new-armia">
+  <label>Задайте командира:</label><br>
+  <input type=number name="id_komandir" placeholder="Введите id военнослужащего" required><br>
+  <button type="submit">Создать новую Армию</button>
+</form>
+
+<!--<p>Редактировать армию:</p>-->
+<!--<form method="post" action="/edit-armia">-->
+<!--  <label>Введите id бригады, которую хотите отредактировать:</label><br>-->
+<!--  <input type=number name="armia" placeholder="Введите id армии" required><br>-->
+<!--  <label>Введите нового командира (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_komandir" placeholder="Введите id военнослужащего"><br>-->
+<!--  <label>Введите бригаду, входящую в данную армию (или оставьте поле незаполненным):</label><br>-->
+<!--  <input type=number name="id_brigada" placeholder="Введите id бригады"><br>-->
+<!--  <button type="submit">Редактировать</button>-->
+<!--</form>-->
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<br><br>
+<h2>Вспомогательные данные</h2>
+<p>Список офицеров:</p>
+{{#oficerPersons}}
+  <div>
+    <b>{{oficerId}}</b>
+    <b>{{firstName}}</b>
+    <b>{{lastName}}</b>
+    <b>{{thirdName}}</b>
+  </div>
+{{/oficerPersons}}
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+</html>

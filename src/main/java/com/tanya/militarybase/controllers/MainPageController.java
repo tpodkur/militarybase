@@ -11,16 +11,12 @@ import java.util.Map;
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class MainPageController {
-    private final PersonRepository personRepository;
 
     @GetMapping("/main")
     public String main(Map<String, Object> model) { return "main"; }
 
     @GetMapping("/forms")
-    public String getForms(Map<String, Object> model) {
-        model.put("persons", personRepository.getAll());
-        return "forms";
-    }
+    public String getForms(Map<String, Object> model) { return "forms"; }
 
     @GetMapping("/requests")
     public String getRequests(Map<String, Object> model) { return "requests"; }

@@ -1,4 +1,4 @@
-create table people (
+1create table people (
     id_man      NUMBER GENERATED ALWAYS as IDENTITY(START WITH 1 INCREMENT by 1) primary key not null,
     first_name  varchar(255),
     last_name   varchar(255),

@@ -14,21 +14,9 @@
     </form><br><br>
     <h1>Информационная система военного округа</h1>
     <h2>Формы</h2>
-    <form method="post" action="/person">
-      <label>Введите нового военнослужащего:</label><br>
-      <input type="text" name="firstName" placeholder="Фамилия"><br>
-      <input type="text" name="lastName" placeholder="Имя"><br>
-      <input type="text" name="thirdName" placeholder="Отчество"><br>
-      <button type="submit">Добавить</button>
-      <input type="hidden" name="_csrf" value="{{_csrf.token}}">
-    </form><br><br><br>
-    <p>Список военнослужащих:</p>
-    {{#persons}}
-      <div>
-        <b>{{firstName}}</b>
-        <b>{{lastName}}</b>
-        <b>{{thirdName}}</b>
-      </div>
-    {{/persons}}
-  </body>
+    <form method="get" action="/voennosluzhashie"><button type="submit">Военнослужащие</button></form>
+    <form method="get" action="/podrazdelenia"><button type="submit">Подразделения</button></form>
+<!--    <form method="get" action="/voennosluzhashie"><button type="submit">Военнослужащие</button></form>-->
+<!--    <form method="get" action="/voennosluzhashie"><button type="submit">Военнослужащие</button></form>-->
+<!--    <form method="get" action="/voennosluzhashie"><button type="submit">Военнослужащие</button></form>-->
 </html>
