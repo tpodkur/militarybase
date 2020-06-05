@@ -1,6 +1,6 @@
 package com.tanya.militarybase.model.podrazdelenia;
 
-import com.tanya.militarybase.model.persons.Oficer;
+import com.tanya.militarybase.model.OficerSostav;
 import lombok.*;
 import javax.persistence.*;
 
@@ -16,7 +16,7 @@ public class Brigada {
     private Integer id;
 
     @OneToOne
-    private Oficer kapitan;
+    private OficerSostav kapitan;
 
     @ManyToOne
     private Armia armia;
