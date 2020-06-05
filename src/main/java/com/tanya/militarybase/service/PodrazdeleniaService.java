@@ -84,7 +84,7 @@ public class PodrazdeleniaService {
         return korpus;
     }
 
-    public Otdelenie postKorpus(Person kapitan, Vzvod vzvod) {
+    public Otdelenie postOtdelenie(Person kapitan, Vzvod vzvod) {
         Otdelenie otdelenie = new Otdelenie();
         otdelenie.setKapitan(kapitan);
         otdelenie.setVzvod(vzvod);
@@ -114,5 +114,37 @@ public class PodrazdeleniaService {
         vzvod.setRota(rota);
         vzvodRepository.save(vzvod);
         return vzvod;
+    }
+
+    public Armia getArmia(Integer id) {
+        return armiaRepository.findById(id).get();
+    }
+
+    public Brigada getBrigada(Integer id) {
+        return brigadaRepository.findById(id).get();
+    }
+
+    public Divizia getDivizia(Integer id) {
+        return diviziaRepository.findById(id).get();
+    }
+
+    public Korpus getKorpus(Integer id) {
+        return korpusRepository.findById(id).get();
+    }
+
+    public Otdelenie getOtdelenie(Integer id) {
+        return otdelenieRepository.findById(id).get();
+    }
+
+    public Rota getRota(Integer id) {
+        return rotaRepository.findById(id).get();
+    }
+
+    public VoinskayaChast getVoinskayaChast(Integer id) {
+        return voinskayaChastRepository.findById(id).get();
+    }
+
+    public Vzvod getVzvod(Integer id) {
+        return vzvodRepository.findById(id).get();
     }
 }

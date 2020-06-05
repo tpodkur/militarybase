@@ -171,11 +171,15 @@ public class FormsService {
         }
     }
 
-    public OficerSostav getOficerSostav(Integer id){
+    public OficerSostav getOficerSostav(Integer id) {
         OficerSostav oficerSostav = oficerSostavRepository.findById(id).get();
         if (oficerSostav == null) {
             System.out.println("problem");
         }
         return oficerSostav;
+    }
+
+    public Person getPerson(Integer id) {
+        return personRepository.findById(id).get();
     }
 }
