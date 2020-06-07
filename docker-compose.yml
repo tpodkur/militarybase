@@ -1,0 +1,29 @@
+
+version: "3.3"
+services:
+  db:
+    container_name: db
+    image: postgres:11.5-alpine
+    environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=123
+         - POSTGRES_DB=militarybase
+    networks:
+      - backend
+
+
+  server:
+    container_name: server
+    image: podkur/militarybase:latest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/militarybase
+      SPRING_FLYWAY_URL: jdbc:postgresql://db:5432/militarybase
+    networks:
+      - backend
+    ports:
+      - 8081:8081
+    depends_on:
+      - db
+
+networks:
+  backend:
