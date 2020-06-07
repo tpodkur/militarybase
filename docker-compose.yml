@@ -14,7 +14,7 @@ services:
 
   server:
     container_name: server
-    image: podkur/militarybase:latest
+    build: ./
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/militarybase
       SPRING_FLYWAY_URL: jdbc:postgresql://db:5432/militarybase
