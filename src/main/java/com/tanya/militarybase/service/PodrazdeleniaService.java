@@ -31,7 +31,7 @@ public class PodrazdeleniaService {
     private final VzvodRepository vzvodRepository;
 
     public List<OficerSostavPerson> getAllOficerSostav() {
-        List<Person> allPersons = personRepository.findAll();
+        List<Person> allPersons = personRepository.findByActive(true);
 
         List<OficerSostavPerson> oficerPersons = new ArrayList<>();
 

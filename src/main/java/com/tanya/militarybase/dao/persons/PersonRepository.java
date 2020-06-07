@@ -35,4 +35,5 @@ import java.util.Optional;
 //}
 public interface PersonRepository extends JpaRepository<Person, Integer> {
     Optional<Person> findById(Integer id);
+    List<Person> findByActive(Boolean isActive);
 }

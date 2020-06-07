@@ -24,7 +24,7 @@ public class FormsController {
 
     @GetMapping("/voennosluzhashie")
     public String getVoennosluzhashie(Map<String, Object> model) {
-        model.put("persons", personRepository.findAll());
+        model.put("persons", personRepository.findByActive(true));
         return "voennosluzhashie";
     }
 

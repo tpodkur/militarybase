@@ -35,7 +35,7 @@ public class PodrazdeleniaController {
         model.put("roti", podrazdeleniaService.getRoti());
         model.put("vzvodi", podrazdeleniaService.getVzvodi());
         model.put("otdelenia", podrazdeleniaService.getOtdelenia());
-        model.put("allPersons", personRepository.findAll());
+        model.put("allPersons", personRepository.findByActive(true));
         return "podrazdelenia";
     }
 
