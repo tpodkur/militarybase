@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style type="text/css">
+  </style>
+  <title>Формы</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="/logout" method="post">
+  <input type="submit" value="Выйти"/>
+  <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form><br><br>
+<form method="get" action="/back-forms">
+  <button type="submit">Назад</button>
+</form>
+<h1>Информационная система военного округа</h1>
+<h2>Вооружение</h2>
+<p>Форма ввода нового вооружения:</p>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<form method="post" action="/new-vooruzhenie">
+  <input type="number" name="id_chast" placeholder="id воинской части"><br>
+  <div>
+    <select name="tranport_type" required>
+      <option value="" disabled selected hidden>Выберите тип</option>
+      <option value="AUTO">Артиллерия</option>
+      <option value="TYAGACH">Карабины</option>
+      <option value="BMP">Автоматическое оружие</option>
+      <option value="BMP">Ракетное вооружение</option>
+    </select>
+  </div>
+
+  <input type="number" name="transport_name" placeholder="наименование"><br>
+
+  <label>Введите характеристики единицы вооружения:</label><br>
+  <label>(Внимание! Вводите характеристики только для типа вооружения, который вы ввели выше.)</label><br><br>
+
+  <label>Характеристики Артиллерии:</label><br>
+  <div>
+    <select name="ar_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="ar_character2" placeholder="Полное название"><br>
+  <input type="number" name="ar_character3" placeholder="Год выпуска"><br><br>
+
+  <label>Характеристики Карабина:</label><br>
+  <div>
+    <select name="kar_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="kar_character2" placeholder="Полное название"><br>
+  <input type="number" name="kar_character3" placeholder="Год выпуска"><br><br>
+
+  <label>Характеристики Автоматического оружия:</label><br>
+  <div>
+    <select name="ao_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="ao_character2" placeholder="Полное название"><br>
+  <input type="number" name="ao_character3" placeholder="Год выпуска"><br><br>
+
+  <label>Характеристики Ракетного оружия:</label><br>
+  <div>
+    <select name="ro_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="ro_character2" placeholder="Полное название"><br>
+  <input type="number" name="ro_character3" placeholder="Год выпуска"><br><br>
+
+  <button type="submit">Добавить</button>
+
+  <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Список военных частей:</p>
+{{#vchasti}}
+  <div>
+    <b>{{id}}: командир - офицер {{kapitan.person.firstName}} {{kapitan.person.lastName}} {{kapitan.person.thirdName}} [{{kapitan.person.id}}]</b>
+  </div>
+{{/vchasti}}
+</body>
+</html>

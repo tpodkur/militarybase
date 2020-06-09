@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style type="text/css">
+  </style>
+  <title>Формы</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="/logout" method="post">
+  <input type="submit" value="Выйти"/>
+  <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form><br><br>
+<form method="get" action="/back-forms">
+  <button type="submit">Назад</button>
+</form>
+<h1>Информационная система военного округа</h1>
+<h2>Транспорт</h2>
+<p>Форма ввода новой единицы транспорта:</p>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<form method="post" action="/new-tranport">
+  <input type="number" name="id_chast" placeholder="id воинской части"><br>
+  <div>
+    <select name="tranport_type" required>
+      <option value="" disabled selected hidden>Выберите тип</option>
+      <option value="AUTO">Автотраспорт</option>
+      <option value="TYAGACH">Тягач</option>
+      <option value="BMP">БМП</option>
+    </select>
+  </div>
+
+  <input type="number" name="transport_name" placeholder="наименование"><br>
+
+  <label>Введите характеристики единицы транспорта:</label><br>
+  <label>(Внимание! Вводите характеристики только для типа транспорта, который вы ввели выше.)</label><br><br>
+
+  <label>Характеристики Автотранспорта:</label><br>
+  <div>
+    <select name="auto_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="auto_character2" placeholder="Полное название"><br>
+  <input type="number" name="auto_character3" placeholder="Год выпуска"><br><br>
+
+  <label>Характеристики Тягача:</label><br>
+  <div>
+    <select name="t_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="t_character2" placeholder="Полное название"><br>
+  <input type="number" name="t_character3" placeholder="Год выпуска"><br><br>
+
+  <label>Характеристики БМП:</label><br>
+  <div>
+    <select name="bmp_character1">
+      <option value="" >Наличие</option>
+      <option value=0>Отсутствует</option>
+      <option value=1>Присутствует</option>
+    </select>
+  </div>
+  <input type="text" name="bmp_character2" placeholder="Полное название"><br>
+  <input type="number" name="bmp_character3" placeholder="Год выпуска"><br><br>
+
+  <button type="submit">Добавить</button>
+
+  <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p>Список военных частей:</p>
+{{#vchasti}}
+  <div>
+    <b>{{id}}: командир - офицер {{kapitan.person.firstName}} {{kapitan.person.lastName}} {{kapitan.person.thirdName}} [{{kapitan.person.id}}]</b>
+  </div>
+{{/vchasti}}
+</body>
+</html>
